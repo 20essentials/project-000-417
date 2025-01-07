@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #7debf2, #60a4ff);
+  overflow: hidden;
+
+  @media (width <= 1111px) {
+    zoom: 0.3;
+  }
+}
+
+.item {
+  background: linear-gradient(90deg, #7debf2, #60a4ff);
+  box-shadow: 0 0 40px #0008;
+  border-radius: 50%;
+  width: var(--wh);
+  height: var(--wh);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: show 1.5s ease-in-out both;
+  animation-delay: calc((var(--d) * 0.3s));
+
+  &.item-1 {
+    --wh: 1750px;
+  }
+  &.item-2 {
+    --wh: 1500px;
+  }
+  &.item-3 {
+    --wh: 1250px;
+  }
+  &.item-4 {
+    --wh: 1000px;
+  }
+  &.item-5 {
+    --wh: 750px;
+  }
+  &.item-6 {
+    --wh: 500px;
+  }
+  &.item-7 {
+    --wh: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+
+    .geometric {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
